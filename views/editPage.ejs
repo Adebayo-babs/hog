@@ -1,0 +1,37 @@
+<%- include ('partials/header') %>
+
+
+		<h3>Edit Blog</h3>
+
+		<% if(typeof(error) != 'undefined') { %>
+
+				<% error.forEach(function(err){ %>
+
+							<h5 style="color: red;"><%= err %></h5>
+
+				<% }) %>
+
+			<% } %>
+
+			<% if(message != '') {%>
+				<h6 style="color:green"><%= message %></h6>
+
+			<% } %>
+
+			<% if(error_msg != '') { %>
+
+				<h6 style="color:red"><%= error_msg %></h6>
+
+			<% } %>
+
+			<% result.forEach((r) => { %>
+
+				<form action="/edit/<%= r._id %>" method="post">
+					<p>Title: <input type="text" name="title" value="<%= r.title %>"></p>
+					<p>Message: <br> <textarea name="message" rows="7" cols="25"><%= r.message %></textarea></p>
+					<input type="submit" name="" value="Click to Edit">
+				</form>
+
+			<% }) %>
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,30 @@
+<%- include ('partials/header') %>
+
+		<% if(message != '') {%>
+				<h6 style="color:green"><%= message %></h6>
+
+			<% } %>
+
+			<% if(error_msg != '') { %>
+
+				<h6 style="color:red"><%= error_msg %></h6>
+
+			<% } %>
+
+		<h1>LOGIN PAGE</h1>
+
+		<form action="/login" method="post">
+
+			<p>Username: <input type="text" name="username"></p>
+			<p>Password: <input type="password" name="password"></p>
+
+			<input class="btn btn-primary py-3 px-5" type="submit" name="" value="LOGIN">
+			
+		</form>
+
+		<hr>
+
+			<a class="btn btn-primary py-3 px-5" href="/">Back to Home</a>
+			<a class="btn btn-primary py-3 px-5" href="/signup"> Signup</a>
+
+<%- include ('partials/footer') %>

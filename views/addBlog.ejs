@@ -1,0 +1,23 @@
+<%- include ('partials/header') %>
+		<h1>Blog Upload Page</h1>
+		
+		<hr>
+
+		<a class="btn btn-primary py-3 px-5" href="/dashboard">Home</a>
+		<a class="btn btn-primary py-3 px-5" href="/addBlog">Upload Blog</a>
+		<a class="btn btn-primary py-3 px-5" href="/viewBlog">View Blog</a>
+		<a class="btn btn-primary py-3 px-5" href="/logout">Click to Logout</a>
+
+		<hr>
+
+		<p>Welcome: <strong><%= username %></strong></p>
+
+		<form action="/addBlog" method="POST">
+			<p>Title: <input type="text" name="title"></p>
+			<p>Message: <br><textarea name="message" rows="7" cols="150"></textarea></p>
+			
+			<button class="btn btn-primary py-3 px-5">Send Message</button>
+			
+		</form>
+
+<%- include ('partials/footer') %>

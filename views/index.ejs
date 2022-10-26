@@ -1,0 +1,42 @@
+<%- include ('partials/header') %>
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+  <div id="header-carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img class="w-100" src="/images/img1.jpg" alt="Image">
+              <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                  <div class="p-3" style="max-width: 900px;">
+                      <h1 class="display-3 text-white mb-md-4">INTIMACY WITH THE HOLYSPIRIT</h1>
+                      <a href="/about" class="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Services Start -->
+<div class="container-fluid pt-5 pb-3">
+  <div class="container">
+      <h1 class="display-4 text-center mb-5">MESSAGES</h1>
+      <div class="row">
+        <% result.forEach((r) => { %>
+          <div class="col-lg-3 col-md-6 pb-1">
+              <div class="d-flex flex-column align-items-center justify-content-center text-center bg-light mb-4 px-4" style="height: 300px;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4" style="width: 100px; height: 100px;">
+                  </div>
+                  <h2><%= r.title %></h2>
+                  <p><%= r.message.substring(0, 100) + "..." %></p>
+                  <a href="/details/<%= r._id %>" class="btn btn-primary py-md-3 px-md-5 mt-2">Read More</a>
+              </div>
+          </div>
+          <% }) %>
+      </div>
+  </div>
+</div>
+<!-- Services End -->
+      
+
+<%- include ('partials/footer') %>

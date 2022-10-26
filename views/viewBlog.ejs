@@ -1,0 +1,16 @@
+<%- include ('partials/header') %>
+
+
+	<a class="btn btn-primary py-3 px-5" href="/addBlog">Upload Blog</a>
+	<a class="btn btn-primary py-3 px-5" href="/logout">Click to Logout</a>
+
+				<% result.forEach((recs) => { %>
+                    <h1><%= recs.title%></h1>
+                    <p><%= recs.message %></p>
+					<a class="btn btn-primary py-3 px-5" href="/edit/<%= recs._id %>">Edit</a>
+					<a class="btn btn-primary py-3 px-5" href="/delete/<%= recs._id %>">Delete</a>
+			    <% 	}) %>
+			
+		</table>
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,27 @@
+<%- include ('partials/header') %>
+
+
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">MESSAGE FROM THE LORD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+    <% result.forEach((r) => { %>
+        <div class="col-md-6 mb-5 text-center text-md-left">
+            <h1  class="mb-md-0"><%= r.title %></h1>
+        </div>
+        <p><%= r.message %></p>
+
+      <% }) %>
+
+
+<%- include ('partials/footer') %>
+
+
+

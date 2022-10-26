@@ -1,0 +1,41 @@
+<%- include ('partials/header') %>
+
+
+			<% if (typeof error != 'undefined') { %>
+
+				<% error.forEach(function(error){ %>
+
+							<h5 style="color: red;"><%= error.msg %></h5>
+
+				<% }) %>
+
+			<% } %>
+
+			<% if(message != '') {%>
+				<h6 style="color:green"><%= message %></h6>
+
+			<% } %>
+
+			<% if(error_msg != '') { %>
+
+				<h6 style="color:red"><%= error_msg %></h6>
+
+			<% } %>
+				<h1>ADMIN SIGNUP </h1>
+			<form action="/signup" method="post" enctype="application/x-www-form-urlencoded">
+
+				<p>Fullname: <input type="text" name="fn" value="<%= typeof fn !='undefined'? fn: '' %>"></p>
+				<p>Email: <input type="email" name="email" value="<%= typeof email !='undefined'? email: '' %>"></p>
+				<p>Username: <input type="text" name="username" value="<%= typeof username !='undefined'? username: '' %>"></p>
+				<p>Password: <input type="password" name="pass1" value="<%= typeof pass1 !='undefined'? pass1: '' %>"></p>
+				<p>Confirm Password: <input type="password" name="pass2" value="<%= typeof pass2 !='undefined' ? pass2: '' %>"></p>
+				<input type="submit" class="btn btn-primary py-3 px-5" name="" value="SIGNUP">
+				
+			</form>
+
+			<hr>
+
+			<a class="btn btn-primary py-3 px-5" href="/">Back to Home</a>
+			<a class="btn btn-primary py-3 px-5" href="/login">Login</a>
+
+<%- include ('partials/footer') %>
